@@ -3,11 +3,11 @@ snippet write "write!(..)" b
 write!("$1"${2/..*/, /}$2);
 endsnippet
 
-snippet pr "println!(..)" b
+snippet pl "println!(..)" b
 println!("${1:\{}}"${2});
 endsnippet
 
-snippet prd "println!(..)" b
+snippet pd "println debug" b
 println!("${1}{:?}", ${2});
 endsnippet
 
