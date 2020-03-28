@@ -1,0 +1,23 @@
+priority 10
+snippet write "write!(..)" b
+write!("$1"${2/..*/, /}$2);
+endsnippet
+
+snippet pr "println!(..)" b
+println!("${1:\{}}"${2});
+endsnippet
+
+snippet prd "println!(..)" b
+println!("${1}{:?}", ${2});
+endsnippet
+
+snippet main "fn main"
+fn main() {
+	$1
+}$0
+endsnippet
+
+snippet col "collect" w
+collect::<${1:Vec<_>}>()
+endsnippet
+# vim:ft=snippets:

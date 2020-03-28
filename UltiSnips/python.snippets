@@ -1,0 +1,30 @@
+snippet super "Magic super()" !w
+`!p
+snip.rv = 'super('
+import vim
+tag = vim.eval('TagInStatusLine()')
+if tag:
+    tag = tag.strip('[]')
+    if '.' in tag:
+        class_name, method_name = tag.split('.')[-2:]
+        snip.rv = 'super(%s, self).%s' % (class_name, method_name)
+`$1
+endsnippet
+
+snippet pr "Magic super()" !w
+`!p
+snip.rv = 'print '
+import vim
+tag = vim.eval('TagInStatusLine()')
+if tag:
+    tag = tag.strip('[]')
+    tag = tag.rpartition('(')[0]
+    if '.' in tag:
+        class_name, method_name = tag.split('.')[-2:]
+        val = method_name
+    else:
+        val = ''
+    snip.rv = 'print \'%s\\n%s:%%d\' %% __import__(\'sys\')._getframe().f_lineno' % ('-XFIXME------', val)
+`$1
+endsnippet
+

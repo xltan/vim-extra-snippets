@@ -1,0 +1,31 @@
+snippet pl "println" b
+fmt.Println(${1:w})
+endsnippet
+
+snippet pf "printf" b
+fmt.Printf("${1:%v\n}", ${2:var})
+endsnippet
+
+snippet fp "file printf" b
+fmt.Fprintf(${1:w}, "${2:%v\n}", ${3:var})
+endsnippet
+
+snippet ef "errorf" 
+fmt.Errorf("${1:%v}", ${2:err})
+endsnippet
+
+snippet ife "errorf" b
+if err != nil {
+	${1}
+}
+endsnippet
+
+snippet gof "go func" b
+go func(${1}) {
+	${2}
+}()
+endsnippet
+
+snippet ctx "context" b
+ctx context.Context
+endsnippet
